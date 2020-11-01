@@ -1,0 +1,4 @@
+2captcha-python==1.0.3
+Pillow==8.0.1
+# pip install 2captcha-python
+# pip install Pillow
