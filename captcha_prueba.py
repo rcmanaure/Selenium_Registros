@@ -22,9 +22,13 @@ def get_captcha(driver, element, path):
 
 
 driver = webdriver.Firefox(executable_path=r"c:\se\geckodriver.exe")
-driver.get("http://forum.geonames.org/gforum/user/insert.page")
+driver.get("http://www.cplusplus.com/user/access.cgi?w=signup")
 
 
 # download image/captcha
-img = driver.find_element_by_xpath("/html/body/table[2]/tbody/tr[2]/td/form/table[2]/tbody/tr[7]/td[2]/img")
+try:
+    img = driver.find_element_by_xpath("/html/body/div[3]/div/div[2]/div/form/table/tbody/tr[7]/td[2]/img")
+except:
+    print('Error al obtener imagen')
+    exit()
 get_captcha(driver, img, r"C:\Users\Xenofungus\Desktop\selenium\captcha.png")
